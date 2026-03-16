@@ -10,7 +10,7 @@
     "build": "astro build",
     "serve": "HOST=0.0.0.0 PORT=5055 bun run dist/server/entry.mjs",
     "tunnel": "cloudflared tunnel run levelnine",
-    "start": "bun run build && concurrently \"bun run serve\" \"bun run tunnel\"",
+    "start": "lsof -ti:5055 | xargs kill -9 2>/dev/null; bun run build && concurrently \"bun run serve\" \"bun run tunnel\"",
     "preview": "astro preview",
     "astro": "astro"
   },
