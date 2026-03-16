@@ -1,0 +1,40 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import DegreeCalculator from "../components/DegreeCalculator.tsx";
+---
+
+<Layout title="Degree Value Calculator — Praxis" description="Is your degree path leading to value creation or just credentialing? Get an honest AI analysis of your degree's real ROI.">
+  <div class="relative overflow-hidden">
+    <Nav />
+    <header class="px-6 pb-8 md:pb-12 max-w-4xl mx-auto">
+
+      <div class="max-w-3xl">
+        <h1 class="font-display text-4xl md:text-6xl leading-tight mb-4">
+          Degree Value<br />
+          <span class="italic text-ember">Calculator</span>
+        </h1>
+        <p class="text-lg text-slate-light max-w-2xl leading-relaxed">
+          Is your degree teaching you to create value — or just collecting a credential?
+          Melissa Carleton argues it's up to colleges to keep degrees relevant. But you
+          shouldn't wait for them to decide. Find out where you actually stand.
+        </p>
+      </div>
+    </header>
+
+    <section class="px-6 pb-16 md:pb-24">
+      <div class="max-w-4xl mx-auto">
+        <DegreeCalculator client:load />
+      </div>
+    </section>
+
+    <footer class="px-6 py-12 border-t border-slate-mid/30 text-center">
+      <p class="font-display text-xl italic text-ember mb-2">Praxis</p>
+      <p class="text-sm text-slate-light">
+        Built on the research of
+        <a href="https://www.linkedin.com/in/melissa-carleton-911499165/" class="text-ember hover:text-ember-light transition-colors">Melissa Carleton</a>
+        at Princeton.
+      </p>
+    </footer>
+  </div>
+</Layout>

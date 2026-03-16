@@ -1,0 +1,39 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Assessment from "../components/Assessment.tsx";
+---
+
+<Layout title="Praxis — Value Creation Assessment" description="Discover where you stand on the value creation spectrum. Get a personalized AI assessment of your skills, mindset, and next steps.">
+  <div class="relative overflow-hidden">
+    <Nav />
+    <header class="px-6 pb-8 md:pb-12 max-w-5xl mx-auto">
+
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="font-display text-4xl md:text-5xl leading-tight mb-4">
+          Value Creation<br />
+          <span class="italic text-ember">Assessment</span>
+        </h1>
+        <p class="text-lg text-slate-light max-w-xl mx-auto leading-relaxed">
+          Answer six quick questions. Get a personalized analysis of where you stand on the
+          employee-to-creator spectrum — and what to do next.
+        </p>
+      </div>
+    </header>
+
+    <section class="px-6 pb-16 md:pb-24">
+      <div class="max-w-2xl mx-auto">
+        <Assessment client:load />
+      </div>
+    </section>
+
+    <footer class="px-6 py-12 border-t border-slate-mid/30 text-center">
+      <p class="font-display text-xl italic text-ember mb-2">Praxis</p>
+      <p class="text-sm text-slate-light">
+        Built on the research of
+        <a href="https://www.linkedin.com/in/melissa-carleton-911499165/" class="text-ember hover:text-ember-light transition-colors">Melissa Carleton</a>
+        at Princeton.
+      </p>
+    </footer>
+  </div>
+</Layout>

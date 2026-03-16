@@ -1,0 +1,106 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+
+const articles = [
+  {
+    title: "Pack Your Schedule or Sharpen Your Positioning? Skills High School Students Can Develop in the Age of AI",
+    date: "March 5, 2026",
+    slug: "skills-high-school-students-ai-economy",
+    summary: "Rather than overscheduling, high school students gain more by articulating their value through focused problem-solving and tracking where economic opportunities emerge.",
+  },
+  {
+    title: "Grit Won't Solve Students' Labor Market Challenges: Redefining Merit and Success for the Younger Generation",
+    date: "February 19, 2026",
+    slug: "meritocracy-in-an-ai-hiring-market",
+    summary: "Traditional grit narratives fail in an AI-disrupted labor market. Students need pivoting skills, personal brands, and multiple income streams — not just persistence.",
+  },
+  {
+    title: "Trillionaires and Layoffs? An Approach to Redistribute Companies' AI-Related Wealth",
+    date: "February 5, 2026",
+    slug: "ai-wealth-redistribution",
+    summary: "As AI concentrates wealth among tech owners while graduate unemployment nears 10%, Carleton proposes a public fund from AI company tax revenue — modeled on Alaska's Permanent Fund.",
+  },
+  {
+    title: "Universal Basic Income in an AI-Driven Age Part 2: Architecting a Fair Policy",
+    date: "January 22, 2026",
+    slug: "ubi-ai-power-dynamics-pt2",
+    summary: "A well-designed UBI must avoid cliff effects, include diverse voices in policy design, and frame income support as empowerment — not dependency.",
+  },
+  {
+    title: "Exploring Universal Basic Income in an AI-Driven Age: Economic Security or Power Dynamics?",
+    date: "January 8, 2026",
+    slug: "ubi-ai-power-dynamics",
+    summary: "UBI could inadvertently create a two-tiered society where AI architects control the systems governing everyone else. Power dynamics matter as much as dollar amounts.",
+  },
+  {
+    title: "Could AI Master Economic Thinking to Solve Real-World Problems?",
+    date: "November 20, 2025",
+    slug: "can-ai-think-like-an-economist",
+    summary: "AI can handle undergraduate economics but struggles with complex research. Embedding expert economic knowledge into AI requires interdisciplinary collaboration at scale.",
+  },
+  {
+    title: "Will Technological Change Make the Degree Irrelevant? It's Up to Colleges to Decide.",
+    date: "October 23, 2025",
+    slug: "collegedegreerelevance",
+    summary: "Only 41% of young adults see higher education as very important. Colleges must modernize curricula, formalize career support, and leverage alumni networks to stay relevant.",
+  },
+];
+---
+
+<Layout title="Articles — Praxis" description="Research and analysis by Melissa Carleton on AI, economics, education, and the future of work.">
+  <div class="relative overflow-hidden">
+    <Nav />
+    <header class="relative px-6 pb-16 md:pb-24 max-w-5xl mx-auto">
+
+      <div class="max-w-3xl">
+        <h1 class="font-display text-5xl md:text-6xl leading-tight mb-4">
+          The Research
+        </h1>
+        <p class="text-lg md:text-xl text-slate-light max-w-2xl leading-relaxed">
+          Articles by <a href="https://www.linkedin.com/in/melissa-carleton-911499165/" class="text-ember hover:text-ember-light transition-colors">Melissa Carleton</a>
+          from <a href="https://www.honesteconomist.com" class="text-ember hover:text-ember-light transition-colors">The Honest Economist</a>
+          — the research behind Praxis.
+        </p>
+      </div>
+    </header>
+
+    <section class="px-6 pb-16 md:pb-24">
+      <div class="max-w-5xl mx-auto">
+        <ol class="space-y-6">
+          {articles.map((article) => (
+            <li>
+              <a
+                href={`https://www.honesteconomist.com/column/${article.slug}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block bg-slate-deep/50 rounded-2xl p-8 border border-slate-mid/20 hover:border-ember/30 transition-colors group"
+              >
+                <time class="text-sm text-slate-light/60 uppercase tracking-wider">{article.date}</time>
+                <h2 class="font-display text-2xl md:text-3xl mt-2 mb-3 group-hover:text-ember transition-colors leading-snug">
+                  {article.title}
+                </h2>
+                <p class="text-slate-light leading-relaxed">{article.summary}</p>
+                <span class="inline-flex items-center gap-1.5 mt-4 text-sm text-ember group-hover:text-ember-light transition-colors">
+                  Read on The Honest Economist
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    <footer class="px-6 py-12 border-t border-slate-mid/30 text-center">
+      <p class="font-display text-xl italic text-ember mb-2">Praxis</p>
+      <p class="text-sm text-slate-light">
+        Built on the research of
+        <a href="https://www.linkedin.com/in/melissa-carleton-911499165/" class="text-ember hover:text-ember-light transition-colors">Melissa Carleton</a>
+        at Princeton.
+      </p>
+    </footer>
+  </div>
+</Layout>

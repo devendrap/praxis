@@ -1,22 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
 import Chat from "../components/Chat.tsx";
 ---
 
 <Layout title="Praxis — Learn to Create Value">
   <div class="relative overflow-hidden">
+    <Nav />
     <!-- Hero -->
-    <header class="relative px-6 pt-12 pb-16 md:pt-20 md:pb-24 max-w-5xl mx-auto">
-      <nav class="flex items-center justify-between mb-16">
-        <a href="/" class="font-display text-3xl italic text-ember">Praxis</a>
-        <a
-          href="#coach"
-          class="text-sm font-medium text-slate-light hover:text-ivory transition-colors border border-slate-mid rounded-full px-5 py-2"
-        >
-          Start Learning
-        </a>
-      </nav>
-
+    <header class="relative px-6 pb-16 md:pb-24 max-w-5xl mx-auto">
       <div class="max-w-3xl">
         <h1 class="font-display text-5xl md:text-7xl leading-tight mb-6">
           Stop trading time.<br />
@@ -134,7 +126,7 @@ import Chat from "../components/Chat.tsx";
       <p class="font-display text-xl italic text-ember mb-2">Praxis</p>
       <p class="text-sm text-slate-light">
         Built on the research of
-        <a href="https://www.linkedin.com/in/melissa-carleton/" class="text-ember hover:text-ember-light transition-colors">Melissa Carleton</a>
+        <a href="https://www.linkedin.com/in/melissa-carleton-911499165/" class="text-ember hover:text-ember-light transition-colors">Melissa Carleton</a>
         at Princeton.
       </p>
     </footer>

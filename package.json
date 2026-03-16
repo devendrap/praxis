@@ -9,6 +9,8 @@
     "dev": "astro dev --port 5055",
     "build": "astro build",
     "serve": "HOST=0.0.0.0 PORT=5055 bun run dist/server/entry.mjs",
+    "tunnel": "cloudflared tunnel run levelnine",
+    "start": "bun run build && concurrently \"bun run serve\" \"bun run tunnel\"",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -20,5 +22,8 @@
     "astro": "^6.0.4",
     "solid-js": "^1.9.11",
     "tailwindcss": "^4.2.1"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
   }
 }

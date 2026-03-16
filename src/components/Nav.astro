@@ -1,0 +1,42 @@
+---
+import ThemeToggle from "./ThemeToggle.tsx";
+
+const pathname = Astro.url.pathname;
+
+const links = [
+  { href: "/articles", label: "Articles" },
+  { href: "/economics-lab", label: "Economics Lab" },
+  { href: "/ubi-simulator", label: "UBI Simulator" },
+  { href: "/degree-calculator", label: "Degree Calculator" },
+  { href: "/assess", label: "Assessment" },
+];
+
+function isActive(href: string): boolean {
+  return pathname === href || pathname === href + "/";
+}
+---
+
+<nav class="flex items-center justify-between px-6 pt-12 pb-8 max-w-5xl mx-auto">
+  <a href="/" class="font-display text-3xl italic text-ember">Praxis</a>
+  <div class="flex items-center gap-6">
+    {links.map((link) => (
+      <a
+        href={link.href}
+        class={`text-sm transition-colors ${
+          isActive(link.href)
+            ? "text-ember font-semibold"
+            : "text-slate-light hover:text-ivory"
+        }`}
+      >
+        {link.label}
+      </a>
+    ))}
+    <a
+      href="/#coach"
+      class="text-sm font-medium text-slate-light hover:text-ivory transition-colors border border-slate-mid rounded-full px-5 py-2"
+    >
+      Coach
+    </a>
+    <ThemeToggle client:load />
+  </div>
+</nav>

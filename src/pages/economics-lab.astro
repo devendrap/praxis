@@ -1,0 +1,59 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import EconomicsLab from "../components/EconomicsLab.tsx";
+---
+
+<Layout title="Economics Reasoning Lab — Praxis" description="Watch AI apply PhD-level economic reasoning to real-world scenarios. Supply and demand, game theory, incentive analysis, and more.">
+  <div class="relative overflow-hidden">
+    <Nav />
+
+    <!-- Header -->
+    <header class="px-6 pb-12 max-w-5xl mx-auto">
+      <div class="max-w-3xl">
+        <p class="text-sm font-medium text-ember uppercase tracking-wider mb-3">Interactive Demo</p>
+        <h1 class="font-display text-4xl md:text-6xl leading-tight mb-6">
+          Economics<br />
+          <span class="italic text-ember">Reasoning Lab</span>
+        </h1>
+        <p class="text-lg text-slate-light max-w-2xl leading-relaxed">
+          Can AI reason about economics? Pick a scenario and watch it apply formal frameworks —
+          supply and demand, game theory, incentive analysis — to produce PhD-level economic reasoning
+          in real time.
+        </p>
+      </div>
+    </header>
+
+    <!-- Lab -->
+    <section class="px-6 pb-16 md:pb-24 max-w-5xl mx-auto">
+      <EconomicsLab client:load />
+    </section>
+
+    <!-- Context -->
+    <section class="px-6 py-16 border-t border-slate-mid/30">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="font-display text-2xl md:text-3xl mb-4 italic">Why this matters</h2>
+        <p class="text-slate-light leading-relaxed mb-4">
+          Melissa Carleton's research at Princeton assessed whether LLMs could master economic thinking.
+          She found gaps in reasoning depth and framework application. This lab demonstrates that with
+          the right prompting architecture, AI can produce rigorous economic analysis — identifying
+          second-order effects, distributional impacts, and policy tradeoffs that mirror expert reasoning.
+        </p>
+        <p class="text-slate-light leading-relaxed">
+          The difference isn't the model — it's how you ask. Praxis teaches you to think in economic
+          frameworks so you can leverage AI as a reasoning partner, not just a search engine.
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="px-6 py-12 border-t border-slate-mid/30 text-center">
+      <p class="font-display text-xl italic text-ember mb-2">Praxis</p>
+      <p class="text-sm text-slate-light">
+        Built on the research of
+        <a href="https://www.linkedin.com/in/melissa-carleton-911499165/" class="text-ember hover:text-ember-light transition-colors">Melissa Carleton</a>
+        at Princeton.
+      </p>
+    </footer>
+  </div>
+</Layout>

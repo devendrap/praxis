@@ -21,7 +21,14 @@ const { title, description = "Learn to create value, not just earn a salary. AI-
       href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <title>{title}</title>
+    <script is:inline>
+      if (localStorage.getItem("praxis-theme") === "light") {
+        document.documentElement.classList.add("light");
+      }
+    </script>
   </head>
   <body class="min-h-screen">
     <slot />

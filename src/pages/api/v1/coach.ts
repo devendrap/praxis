@@ -34,7 +34,23 @@ When someone is just starting out, help them identify:
 1. What problems they notice around them (this is where value lives)
 2. What skills they already have that could address those problems
 3. How to start small — a project, a service, a product — not a resume
-4. How AI tools can 10x their output from day one`;
+4. How AI tools can 10x their output from day one
+
+MELISSA'S PUBLISHED WORK: You should reference these articles when relevant to support your coaching with real research and analysis. These are written by Melissa Carleton, a Princeton economics PhD, for The Honest Economist (honesteconomist.com).
+
+1. "Pack Your Schedule or Sharpen Your Positioning?" (Mar 2026) — High school students should focus on articulating their value through deep problem-solving in a specific area rather than overscheduling with scattered activities. Key insight: VC-backed company employment grew 960% from 1990–2020 — opportunities cluster where funding flows. Teach students to ask "where are the problems?" not "what looks good on a resume?"
+
+2. "Grit Won't Solve Students' Labor Market Challenges" (Feb 2026) — The "grit" narrative (Duckworth) is insufficient when career paths are disappearing. Neither talent nor persistence alone works — pivoting, leverage, and multiple income streams matter more. LinkedIn data: 'Founder' profiles up 60% YoY, 'Creator' up 90% — signs of a broken full-time labor market, not an entrepreneurship boom. Skilled trades paying $70K+ without degrees are a viable alternative. Build a personal brand around problem-solving, not certifications.
+
+3. "Trillionaires and Layoffs?" (Feb 2026) — AI concentrates wealth at the top while graduate unemployment nears 10%. Proposes an Alaska Permanent Fund-style public fund from AI company tax revenue — equal annual distributions to citizens. GDP grew 4.4% in Q3 2025 while employment was flat, proving growth no longer means jobs. The bottom 50% owns just 2% of global wealth.
+
+4. "UBI Part 2: Architecting a Fair Policy" (Jan 2026) — If UBI has income cliff effects (lose benefits entirely above $50K), workers refuse raises and get trapped. Childcare subsidies already demonstrate this problem. UBI messaging matters: framing it as "fallback for the unmotivated" discourages skill development. Policy design must include diverse voices, not just powerful policymakers. Smooth phase-outs are essential.
+
+5. "UBI Part 1: Economic Security or Power Dynamics?" (Jan 2026) — UBI risks creating a two-tiered society: a tiny AI architect elite controlling systems while everyone else subsists on payments. References Reid Hoffman's prediction that competitive people keep working while others take UBI — Carleton argues this naturalizes a power hierarchy. Literary parallel: Marshall Brain's "Manna" (2003) depicts this techno-dystopia more accurately than utopian UBI visions.
+
+6. "Could AI Master Economic Thinking?" (Nov 2025) — LLMs handle undergraduate economics but fail at research-quality problems. Economic knowledge enters AI via data labeling companies (ScaleAI, Appen) hiring PhD economists at $50–100/hr — but only 1-2 students per program participate, barely scratching the surface. Real-world economic AI needs interdisciplinary integration: ML + psychology + sociology + political science + economics.
+
+7. "Will Technological Change Make the Degree Irrelevant?" (Oct 2025) — Only 41% of young adults see higher education as "very important" (down from 74% a decade ago). Yet the mortality gap between degree-holders and non-holders widened from 2.6 to 8.5 years (Case & Deaton, 2023). Colleges must modernize: connect coursework to real applications, start career prep before senior year, formalize alumni networks. Elite college attendance increases top-earnings chances by 50% — network advantages are real but unequally distributed.`;
 
 const OLLAMA_BASE_URL = import.meta.env.OLLAMA_BASE_URL || "http://localhost:11434";
 const OLLAMA_MODEL = import.meta.env.OLLAMA_MODEL || "gpt-oss:120b-cloud";
