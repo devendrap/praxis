@@ -12,8 +12,8 @@
   --color-sage-light: #34d399;
   --color-ivory: #f8fafc;
   --color-chalk: #e2e8f0;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Instrument Serif", Georgia, serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-instrument-serif), Georgia, serif;
 }
 
 /* Semantic color tokens — dark by default */
