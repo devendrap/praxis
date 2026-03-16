@@ -1,42 +1,68 @@
 ---
 import ThemeToggle from "./ThemeToggle.tsx";
+import MobileMenu from "./MobileMenu.tsx";
 
 const pathname = Astro.url.pathname;
 
-const links = [
+const learnLinks = [
   { href: "/articles", label: "Articles" },
   { href: "/economics-lab", label: "Economics Lab" },
-  { href: "/ubi-simulator", label: "UBI Simulator" },
+];
+
+const toolLinks = [
   { href: "/degree-calculator", label: "Degree Calculator" },
+  { href: "/ubi-simulator", label: "UBI Simulator" },
   { href: "/assess", label: "Assessment" },
 ];
+
+const allLinks = [...learnLinks, ...toolLinks];
 
 function isActive(href: string): boolean {
   return pathname === href || pathname === href + "/";
 }
+
+const mobileGroups = [
+  { links: [{ href: "/", label: "Home" }, { href: "/#coach", label: "Coach" }] },
+  { links: learnLinks },
+  { links: toolLinks },
+];
+
+const mobileGroupsWithActive = mobileGroups.map((group) => ({
+  links: group.links.map((link) => ({ ...link, active: isActive(link.href) })),
+}));
 ---
 
-<nav class="flex items-center justify-between px-6 pt-12 pb-8 max-w-5xl mx-auto">
-  <a href="/" class="font-display text-3xl italic text-ember">Praxis</a>
-  <div class="flex items-center gap-6">
-    {links.map((link) => (
+<div class="sticky top-0 z-50 backdrop-blur-md bg-[var(--bg-primary)]/80 border-b border-slate-mid/20">
+  <nav class="flex items-center justify-between px-6 py-4 max-w-5xl mx-auto">
+    <a href="/" class="font-display text-3xl italic text-ember shrink-0">Praxis</a>
+
+    <!-- Desktop: static HTML, zero JS -->
+    <div class="hidden lg:flex items-center gap-6">
       <a
-        href={link.href}
-        class={`text-sm transition-colors ${
-          isActive(link.href)
-            ? "text-ember font-semibold"
-            : "text-slate-light hover:text-ivory"
-        }`}
+        href="/#coach"
+        class="text-sm font-medium text-slate-light hover:text-ivory transition-colors border border-slate-mid rounded-full px-5 py-2"
       >
-        {link.label}
+        Coach
       </a>
-    ))}
-    <a
-      href="/#coach"
-      class="text-sm font-medium text-slate-light hover:text-ivory transition-colors border border-slate-mid rounded-full px-5 py-2"
-    >
-      Coach
-    </a>
-    <ThemeToggle client:load />
-  </div>
-</nav>
+      {allLinks.map((link) => (
+        <a
+          href={link.href}
+          class={`text-sm transition-colors ${
+            isActive(link.href)
+              ? "text-ember font-semibold"
+              : "text-slate-light hover:text-ivory"
+          }`}
+        >
+          {link.label}
+        </a>
+      ))}
+      <ThemeToggle client:load />
+    </div>
+
+    <!-- Mobile: islands only where interactivity is needed -->
+    <div class="flex items-center gap-3 lg:hidden">
+      <ThemeToggle client:load />
+      <MobileMenu client:idle groups={mobileGroupsWithActive} />
+    </div>
+  </nav>
+</div>

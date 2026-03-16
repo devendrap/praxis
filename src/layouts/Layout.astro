@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import Nav from "../components/Nav.astro";
 
 interface Props {
   title: string;
@@ -31,6 +32,7 @@ const { title, description = "Learn to create value, not just earn a salary. AI-
     </script>
   </head>
   <body class="min-h-screen">
+    <Nav />
     <slot />
   </body>
 </html>
