@@ -10,7 +10,6 @@ export default defineConfig({
   adapter: node({ mode: 'standalone' }),
   integrations: [solidJs()],
   server: { port: 5055 },
-  allowedHosts: ['praxis.levelnine.ai'],
 
   // ── Astro 6: Built-in Fonts API ──
   fonts: [
