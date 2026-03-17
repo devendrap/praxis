@@ -1,0 +1,10 @@
+name = "praxis"
+compatibility_date = "2026-03-12"
+
+routes = [
+  { pattern = "praxis.levelnine.ai", custom_domain = true }
+]
+
+[vars]
+OLLAMA_BASE_URL = "https://ollama.com"
+OLLAMA_MODEL = "gpt-oss:120b-cloud"

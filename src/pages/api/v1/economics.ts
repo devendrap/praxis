@@ -53,6 +53,7 @@ Your writing style:
 
 const OLLAMA_BASE_URL = import.meta.env.OLLAMA_BASE_URL || "http://localhost:11434";
 const OLLAMA_MODEL = import.meta.env.OLLAMA_MODEL || "gpt-oss:120b-cloud";
+const OLLAMA_API_KEY = import.meta.env.OLLAMA_API_KEY || "";
 
 async function streamAnthropic(apiKey: string, scenario: string): Promise<ReadableStream> {
   const { default: Anthropic } = await import("@anthropic-ai/sdk");
@@ -93,7 +94,10 @@ async function streamOllama(scenario: string): Promise<ReadableStream> {
 
   const res = await fetch(`${OLLAMA_BASE_URL}/api/chat`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json",
+      ...(OLLAMA_API_KEY && { "Authorization": `Bearer ${OLLAMA_API_KEY}` }),
+    },
     body: JSON.stringify({ model: OLLAMA_MODEL, messages: ollamaMessages, stream: true }),
   });
 
