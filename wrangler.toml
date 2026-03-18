@@ -5,6 +5,15 @@ routes = [
   { pattern = "praxis.levelnine.ai", custom_domain = true }
 ]
 
+[[d1_databases]]
+binding = "DB"
+database_name = "praxis-db"
+database_id = "7f51242f-2b35-496c-8e63-7685919a7e71"
+
+[[kv_namespaces]]
+binding = "SESSIONS"
+id = "d2bfdced7b204bbd9dace31eb1b196cf"
+
 [vars]
 OLLAMA_BASE_URL = "https://ollama.com"
 OLLAMA_MODEL = "gpt-oss:120b-cloud"

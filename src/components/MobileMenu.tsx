@@ -10,7 +10,12 @@ interface LinkGroup {
   links: Link[];
 }
 
-export default function MobileMenu(props: { groups: LinkGroup[] }) {
+interface UserInfo {
+  id: string;
+  email: string;
+}
+
+export default function MobileMenu(props: { groups: LinkGroup[]; user?: UserInfo }) {
   const [open, setOpen] = createSignal(false);
 
   return (
@@ -61,6 +66,21 @@ export default function MobileMenu(props: { groups: LinkGroup[] }) {
               </>
             )}
           </For>
+          <div class="border-t border-slate-mid/20 my-1" />
+          <Show
+            when={props.user}
+            fallback={
+              <a href="/login" class="block px-5 py-2.5 text-sm text-slate-light hover:text-ivory transition-colors">
+                Login
+              </a>
+            }
+          >
+            <form method="POST" action="/api/v1/auth/logout">
+              <button type="submit" class="block w-full text-left px-5 py-2.5 text-sm text-slate-light hover:text-ivory transition-colors">
+                Logout
+              </button>
+            </form>
+          </Show>
         </div>
       </Show>
     </div>

@@ -22,5 +22,8 @@
     "preview": "astro preview",
     "astro": "astro"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260317.1"
+  }
 }

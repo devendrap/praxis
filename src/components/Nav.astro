@@ -2,6 +2,11 @@
 import ThemeToggle from "./ThemeToggle.tsx";
 import MobileMenu from "./MobileMenu.tsx";
 
+interface Props {
+  user?: { id: string; email: string };
+}
+
+const { user } = Astro.props;
 const pathname = Astro.url.pathname;
 
 const learnLinks = [
@@ -56,13 +61,20 @@ const mobileGroupsWithActive = mobileGroups.map((group) => ({
           {link.label}
         </a>
       ))}
+      {user ? (
+        <form method="POST" action="/api/v1/auth/logout">
+          <button type="submit" class="text-sm text-slate-light hover:text-ivory transition-colors">Logout</button>
+        </form>
+      ) : (
+        <a href="/login" class="text-sm text-slate-light hover:text-ivory transition-colors">Login</a>
+      )}
       <ThemeToggle client:load />
     </div>
 
     <!-- Mobile: islands only where interactivity is needed -->
     <div class="flex items-center gap-3 lg:hidden">
       <ThemeToggle client:load />
-      <MobileMenu client:idle groups={mobileGroupsWithActive} />
+      <MobileMenu client:idle groups={mobileGroupsWithActive} user={user ? { id: user.id, email: user.email } : undefined} />
     </div>
   </nav>
 </div>

@@ -9,6 +9,7 @@ interface Props {
 }
 
 const { title, description = "Learn to create value, not just earn a salary. AI-powered coaching that teaches you how the economy actually works." } = Astro.props;
+const user = Astro.locals.user;
 ---
 
 <!doctype html>
@@ -29,7 +30,7 @@ const { title, description = "Learn to create value, not just earn a salary. AI-
     </script>
   </head>
   <body class="min-h-screen">
-    <Nav />
+    <Nav user={user} />
     <slot />
   </body>
 </html>
